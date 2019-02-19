@@ -1,0 +1,77 @@
+﻿@model RezervasyonSistem.Data.Models.Oda
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+@{
+    var mesaj = TempData["Mesaj"];
+    if (mesaj != null)
+    {
+        <div class="pad margin no-print">
+            <div class="callout callout-info" style="margin-bottom: 0!important;">
+                <h4><i class="fa fa-info"></i> Not:</h4>
+                @mesaj
+            </div>
+        </div>
+    }
+}
+
+<div class="container-fluid">
+    <!-- Input addon -->
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Yeni Oda</h3>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="box-body">
+
+                    <div class="input-group">
+                        <span class="input-group-addon">₺</span>
+                        @*<input type="text" class="form-control" placeholder="Fiyat">*@
+                        @Html.TextBoxFor(m => m.Fiyat, htmlAttributes: new { @class = "form-control", placeholder = "Fiyat" })
+                        <span class="input-group-addon">.00</span>
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                        @*<input type="text" class="form-control" placeholder="Kişi Sayısı">*@
+                        @Html.TextBoxFor(m => m.KisiSayisi, htmlAttributes: new { @class = "form-control", placeholder = "Kişi sayısı" })
+                    </div>
+
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-sticky-note"></i></span>
+                        @*<input type="text" class="form-control" placeholder="Kapı No">*@
+                        @Html.TextBoxFor(m => m.KapiNo, htmlAttributes: new { @class = "form-control", placeholder = "Kapı No" })
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    @*Çocuk Var mı?<input type="checkbox">*@
+                                    Çocuk Var mı? @Html.CheckBoxFor(m => m.CocukIcinUygunMu)
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- /input-group -->
+                    <br />
+                    <div class="input-group input-group-sm">
+                        <button type="submit" class="btn btn-md btn-info">Kaydet</button>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.box-body -->
+            }
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
