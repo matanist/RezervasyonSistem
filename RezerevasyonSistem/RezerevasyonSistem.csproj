@@ -7308,6 +7308,7 @@
     <Content Include="Tema\AdminLTE-2.4.5\yarn.lock" />
     <Content Include="Views\Shared\_LayoutPageAna.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\RezervasyonYap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,15 @@
+﻿@using RezervasyonSistem.Data.Models
+@model Oda
+@{
+    ViewBag.Title = "RezervasyonYap";
+    Layout = "~/Views/Shared/_LayoutPageAna.cshtml";
+}
+
+<h2>RezervasyonYap</h2>
+<ul>
+    <li>@Model.Id</li>
+    <li>@Model.KapiNo</li>
+    <li>@Model.KisiSayisi</li>
+    <li>@Model.Fiyat ₺</li>
+</ul>
+
